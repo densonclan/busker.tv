@@ -16,4 +16,14 @@ class HomeController extends ApplicationController
         $articles = session('current_lang')->articles()->published()->orderBy('published_at', 'desc')->paginate(5);
         return view('application.home.index', compact('articles'));
     }
+    /**
+     * Show the application homepage to the user.
+     *
+     * @return Response
+     */
+    public function home()
+    {
+        $articles = session('current_lang')->articles()->published()->orderBy('published_at', 'desc')->paginate(5);
+        return view('application.home.home', compact('articles'));
+    }
 }

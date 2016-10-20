@@ -6,7 +6,7 @@ var elixir = require('laravel-elixir'),
         'mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css',
         'datatables/media/css/dataTables.bootstrap.min.css',
         'morris.js/morris.css',
-        'admin.css'
+        'admin.css',
     ],
     adminJs = [
         'jquery/dist/jquery.min.js',
@@ -24,7 +24,9 @@ var elixir = require('laravel-elixir'),
     ],
     applicationCss = [
         'jquery-floating-social-share/dist/jquery.floating-social-share.min.css',
-        'application.css'
+        'application.css',
+        '../css/styles.css'
+
     ],
     applicationJs = [
         'jquery/dist/jquery.min.js',
@@ -44,11 +46,15 @@ elixir(function(mix) {
         .copy(bowerDir + 'raphael/raphael.min.js', 'public/js/raphael.js')
         .copy(bowerDir + 'tinymce', 'public/packages/tinymce')
         .copy(bowerDir + 'tinymce-localautosave/localautosave', 'public/packages/tinymce/plugins/localautosave')
-        .copy(bowerDir + 'font-awesome/fonts', 'public/build/fonts')
-        .copy(bowerDir + 'bootstrap/fonts', 'public/build/fonts')
+        .copy(bowerDir + 'font-awesome/fonts', 'public/fonts')
+        .copy(bowerDir + 'bootstrap/fonts', 'public/fonts')
         .copy(bowerDir + 'mjolnic-bootstrap-colorpicker/dist/img/*', 'public/build/img')
         .less('application.less', bowerDir + 'application.css')
         .styles(applicationCss, 'public/css/application.css', bowerDir)
         .scripts(applicationJs, 'public/js/application.js', bowerDir)
         .version(['css/admin.css', 'css/application.css', 'js/admin.js', 'js/application.js']);
+    mix.copy('resources/assets/img', 'public/img')
+        .version('public/img');
 });
+
+
