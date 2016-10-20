@@ -15,7 +15,8 @@
 		"barryvdh/laravel-elfinder": "~0.3",
 		"spatie/laravel-analytics": "~2.2",
 		"caffeinated/menus": "~3.0",
-		"yajra/laravel-datatables-oracle": "~6.0"
+		"yajra/laravel-datatables-oracle": "~6.0",
+		"alaouy/youtube": "dev-master"
 	},
 	"require-dev": {
 		"fzaninotto/faker": "~1.4",

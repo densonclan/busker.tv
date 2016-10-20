@@ -19,6 +19,9 @@ class ArticlesForm extends AdminForm
                 'choices' => $this->data,
                 'label' => trans('admin.fields.article.category_id')
             ])
+            ->add('video_url', 'text', [
+                'label' => trans('Video URL')
+            ])
             ->add('content', 'textarea', [
                 'label' => trans('admin.fields.article.content')
             ])

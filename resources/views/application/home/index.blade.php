@@ -15,15 +15,19 @@
                         <h2>
                             <a href="{{ route('article', ['article_slug' => $article->slug])  }}">{{ $article->title }}</a>
                         </h2>
+
                     </div>
                 </header>
+                {!! getVideo($article) !!}
+
                 <div class="post-excerpt">
-                    {{ limit_to_numwords(strip_tags($article->content), 50)  }}
+                    {{ limit_to_numwords(strip_tags(getVideoInfo($article)->description), 150)  }}
                 </div>
                 <footer class="post-footer">
                     <div class="post-meta-date pull-left">
                         <i class="fa fa-clock-o"></i>
                         {{ $article->published_at }}
+
                     </div>
                     <div class="pull-right">
                         <a class="btn post-btn btn-sm" href="{{ route('article', ['article_slug' => $article->slug])  }}">{{ trans('application.read_more') }}</a>

@@ -12,12 +12,19 @@
                 </div>
                 <div class="post-title">
                     <h2>{{ $article->title }}</h2>
+                    <h3>{!! getVideoInfo($article)->title !!}</h3>
                 </div>
             </header>
+
+                {!! getVideo($article) !!}
+
             <div class="post-excerpt">
                 {!! $article->content !!}
+
+             
             </div>
             <footer class="post-footer">
+            <p>{!! getVideoInfo($article)->description !!}</p>
                 <div class="post-meta-date pull-left">
                     <i class="fa fa-clock-o"></i>
                     {{ $article->published_at }}

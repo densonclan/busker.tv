@@ -70,6 +70,46 @@ if (!function_exists('getTitle')) {
         }
     }
 }
+if (!function_exists('getVideo')) {
+    /**
+     * Render nodes for nested sets
+     *
+     * @param        $object
+     * @param string $property
+     *
+     * @return string
+     */
+    function getVideo($object = null, $property = "video_url")
+    {
+            $video_id = $object->$property;
+            
+            $video = Youtube::getVideoInfo($video_id);
+            //dd($video);
+
+            $video_html  = $video->player->embedHtml;
+            return $video_html;
+    }
+}
+
+if (!function_exists('getVideoInfo')) {
+    /**
+     * Render nodes for nested sets
+     *
+     * @param        $object
+     * @param string $property
+     *
+     * @return string
+     */
+    function getVideoInfo($object = null, $property = "video_url")
+    {
+            $video_id = $object->$property;
+            
+            $video = Youtube::getVideoInfo($video_id);
+
+            $video_info  = $video->snippet;
+            return $video_info;
+    }
+}
 
 if (!function_exists('getDescription')) {
     /**

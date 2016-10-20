@@ -189,6 +189,7 @@ return [
         Laracasts\Flash\FlashServiceProvider::class,
         Spatie\Analytics\AnalyticsServiceProvider::class,
         Yajra\Datatables\DatatablesServiceProvider::class,
+        Alaouy\Youtube\YoutubeServiceProvider::class,
     ],
 
     /*
@@ -250,6 +251,7 @@ return [
         'Menu'              => Caffeinated\Menus\Facades\Menu::class,
         'Analytics' => Spatie\Analytics\AnalyticsFacade::class,
         'Datatables'        => Yajra\Datatables\Datatables::class,
+        'Youtube'=> Alaouy\Youtube\Facades\Youtube::class
     ],
 
 ];
